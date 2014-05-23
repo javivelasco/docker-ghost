@@ -4,7 +4,8 @@ MAINTAINER Javi Velasco <javier.velasco86@gmail.com>
 
 # Install Ghost
 RUN mkdir -p /ghost
-RUN cd /ghost && wget https://ghost.org/zip/ghost-0.4.0.zip -O ghost.zip
+
+RUN cd /ghost && wget https://ghost.org/zip/ghost-0.4.2.zip -O ghost.zip
 RUN cd /ghost && unzip ghost.zip && rm -f ghost.zip
 RUN cd /ghost && npm install --production
 RUN sed 's/127.0.0.1/0.0.0.0/' /ghost/config.example.js > /ghost/config.js
